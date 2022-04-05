@@ -17,6 +17,9 @@ This module installs two command line tools:
 
 
 ## nb2md : convert notebook to README
+The following is is the output of `nb2md -h` and explains how to use the tool:
+
+```
 usage: nb2md [-h] [-o OUTPUT_PATH] [-i OUTPUT_IMAGE_FOLDER] [-c] [-e] [-k KEYWORD [KEYWORD ...]] [-a] input_path
 
 Convert a notebook into a markdown file. Hide cells containing the autorelaod magic command or the comment #HIDE_IN_MARKDOWN.
@@ -38,6 +41,7 @@ options:
                         Remove the cells containing the specified keywords (use quotes to specify the keywords)
   -a, --keep_auto_hidden
                         Keep the automatically hidden cells. If this flag is not active, cells containing the autorelaod magic command or #README_HIDE_CELL comment will be hidden
+```
 
 ## notebook_preview
 Use this command line to open a preview of your notebook (eg `notebook_preview Untitled1.pynb`).
