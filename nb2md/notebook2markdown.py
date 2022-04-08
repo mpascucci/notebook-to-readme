@@ -210,6 +210,17 @@ def preview(*args):
 
     
     temp_dir = tempfile.mkdtemp(prefix=".nb_preview_", dir='.')
+
+    #clean temp dirs
+    temp_base_dir = os.path.split(temp_dir)[0]
+    print(temp_base_dir)
+    old_temp_dirs = glob.glob(os.path.join(temp_base_dir,".nb_preview_*"))
+    old_temp_dirs.remove(temp_dir)
+    for path in old_temp_dirs:
+        try:
+            shutil.rmtree(path)
+        except NotADirectoryError:
+            pass
     
     notebook_name = os.path.splitext(os.path.basename(notebook_path))[0]
     html_path = os.path.join(temp_dir, f"{notebook_name}.html")
